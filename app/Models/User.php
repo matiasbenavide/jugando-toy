@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -41,4 +40,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //Gridmakers user
+
+    CONST ID_USER_GRIDMAKERS = 1;
+    CONST USER_NAME_GRIDMAKERS = 'Gridmakers';
+
+    //Jugando Toy user
+
+    CONST ID_USER_JUGANDO_TOY = 2;
+    CONST USER_NAME_JUGANDO_TOY = 'Jugando Toy';
 }
