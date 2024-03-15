@@ -1,5 +1,5 @@
 .home {
-    background-color: #FDF9F5;
+    background-color: #FFF;
 }
 
 .new-product {
@@ -102,8 +102,8 @@
 }
 
 .categories-plaza-div {
-    justify-content: end;
-    align-items: start;
+    justify-content: center;
+    align-items: flex-start;
     margin-bottom: 15px;
     width: 310px;
     height: 195px;
@@ -133,6 +133,8 @@
 }
 
 .categories-name {
+    margin-bottom: 0.25rem;
+    margin-left: 0.25rem;
     bottom: 22%;
     left: 4%;
     font-weight: 500;
@@ -164,6 +166,10 @@
 
 .main-text {
     color: #154193;
+}
+
+.about-us-title {
+    padding: 1rem 5% 0;
 }
 
 @keyframes scroll {
@@ -342,7 +348,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 }
 
 .about-us-text {
@@ -373,18 +379,22 @@
 
 .cloud
 {
-    margin-top: -0.6rem;
+    margin-top: -0.1rem;
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 1000;
 }
 
+.cloud-top
+{
+    transform: rotate(180deg);
+}
+
 .cloud-bottom
 {
     margin-top: 0;
     margin-bottom: -0.6rem;
-    transform: rotate(180deg);
 }
 
 .opinions-container
@@ -575,6 +585,16 @@
     {
         padding-left: 15%;
         padding-right: 15%;
+    }
+
+    .about-us-text-div
+    {
+        align-items: center;
+    }
+
+    .main-text
+    {
+        padding: 2rem 0 0;
     }
 
     .about-us-text
@@ -858,7 +878,6 @@
     .about-us-img
     {
         width: 426px;
-        height: 308px;
     }
 
     .about-us-text-div
@@ -1039,7 +1058,6 @@
     .about-us-img
     {
         width: 523px;
-        height: 390px;
     }
 
     .opinions-title
@@ -1176,7 +1194,6 @@
     .about-us-img
     {
         width: 681px;
-        height: 455px;
     }
 
     .opinions-title

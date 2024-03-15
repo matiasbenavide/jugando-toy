@@ -12,7 +12,7 @@
         <div class="nav-div search-cart-container">
             <a id="searchLink" class="search-cart-container">
                 <form id="desktopSearchForm" action="{{ url('/productos') }}" method="GET" hidden>
-                    <input class="nav-bar-search-input" type="text" name="productName" placeholder="Buscar juegos y plazas">
+                    <input id="desktopSearchBar" class="nav-bar-search-input" type="text" name="productName" placeholder="Buscar juegos y plazas" hidden>
                 </form>
                 <img class="nav-icon" id="searchIcon" style="margin-right: 5px" src="{{ asset('admin/assets/icons/searchWhite.svg') }}" alt="">
             </a>

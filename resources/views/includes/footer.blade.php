@@ -4,7 +4,7 @@
             <img src="{{asset('admin/assets/icons/logo.svg')}}" alt="">
         </div>
         <div class="links">
-            <hr>
+            <hr/>
             <div>
                 <div class="footer-drop-down">
                     <p class="drop-down-title">TIENDA</p>
@@ -18,7 +18,7 @@
                     </div>
                 </div>
             </div>
-            <hr>
+            <hr/>
             <div>
                 <div class="footer-drop-down">
                     <p class="drop-down-title">NOSOTROS</p>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <hr>
+            <hr/>
             <div>
                 <div class="footer-drop-down">
                     <p class="drop-down-title">NUESTRAS REDES</p>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <hr>
+            <hr/>
         </div>
         <div class="contact-questions">
             <div class="footer-div contact-button-div">
@@ -63,9 +63,11 @@
     </div>
     <div class="footer-copyright light-blue-bg" style="margin: 0">
         <p class="copyright-text" style="margin-right: 2px">Jugando Toy © Todos los derechos reservados.</p>
-        <div class="d-flex">
+        <div class="d-flex justify-content-center align-items-center">
             <p class="copyright-text" style="margin-right: 5px">Sitio creado por </p>
-            <img src="{{ asset('admin/assets/images/GridMakersLogo.svg') }}" alt="">
+            <a target="_blank" href="https://gridmakers.com/" style="text-decoration: none">
+                <img src="{{ asset('admin/assets/images/GridMakersLogo.svg') }}" alt="">
+            </a>
         </div>
     </div>
 </div>

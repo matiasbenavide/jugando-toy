@@ -2,6 +2,7 @@ export async function mainNavbar(options) {
     let navBarToggle = $('#navBarToggle');
     let searchSection = $('#searchSection');
     let searchLink = $('#searchLink');
+    let desktopSearchBar = $('#desktopSearchBar');
     let searchIcon = $('#searchIcon');
 
     let searchForm = $('#searchForm');
@@ -9,9 +10,21 @@ export async function mainNavbar(options) {
     let submitInput = $('#submitInput');
 
     if (window.getComputedStyle(searchSection[0]).display == 'none') {
-        desktopSearchForm[0].hidden = false;
+        // searchIcon.on("click", function() {
+        //     if (desktopSearchForm[0].hidden == false) {
+        //         desktopSearchForm.submit();
+        //     }
+        //     else {
+        //         desktopSearchBar[0].hidden = false;
+        //         desktopSearchForm[0].hidden = false;
+        //     }
+        // });
         searchIcon.on("click", function() {
             desktopSearchForm.submit();
+        });
+        searchIcon.hover(function() {
+            desktopSearchBar[0].hidden = false;
+            desktopSearchForm[0].hidden = false;
         });
     }
 

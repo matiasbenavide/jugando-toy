@@ -67,6 +67,15 @@ class HomeController extends Controller
         ]);
     }
 
+    public function aboutUs()
+    {
+        $vacations = $this->parametersRepository->first()->vacations;
+
+        return view('pages.about-us')->with([
+            'vacations' => $vacations,
+        ]);
+    }
+
     public function RefundPolicies()
     {
         $vacations = $this->parametersRepository->first()->vacations;

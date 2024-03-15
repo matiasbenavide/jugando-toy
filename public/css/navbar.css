@@ -108,7 +108,8 @@
 .wrapper-navbar.show
 {
     grid-template-rows: 1fr;
-    justify-content: normal;transition: grid-template-rows 500ms;
+    justify-content: normal;
+    transition: grid-template-rows 500ms;
 }
 
 .search-section
@@ -362,7 +363,7 @@ hr
     {
         width: 100%;
         margin-right: 10rem;
-        padding: 5px;
+        padding: 0.5rem;
         background: #FDF9F5;
         font-weight: 500;
         font-size: 16px;

@@ -22,6 +22,7 @@ Route::get('/', function() {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'welcome'])->name('home');
+Route::get('/nosotros', [App\Http\Controllers\HomeController::class, 'aboutUs']);
 Route::get('/productos', [App\Http\Controllers\ProductClientController::class, 'productList']);
 Route::get('/productos/detalle/{categoryId}/{id}', [App\Http\Controllers\ProductClientController::class, 'productDetail']);
 
@@ -46,6 +47,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
         Route::get('/', function () {
             return redirect()->route('admin.home');
         });
+
         // PRODUCT
         Route::get('/productos/listado', [App\Http\Controllers\Admin\ProductsController::class, 'showProducts'])->name('admin.home');
         Route::get('/productos/crear-editar/{category_id}/{id}', [App\Http\Controllers\Admin\ProductsController::class, 'showProductCreation']);

@@ -44,7 +44,7 @@
         </div>
         <div class="categories-div">
             <div class="images-overlap categories-plaza-div">
-                <img class="plaza-image" src="{{ asset('admin/assets/images/HomeCategoriesPlaza.svg') }}" alt="">
+                <img class="plaza-image" src="{{ asset('admin/assets/images/HomeCategoriesPlaza.png') }}" alt="">
                 <p class="categories-name main-text image-to-overlap">Plaza</p>
                 <a href="{{ url('/productos?categorySelector=' . App\Models\Admin\Category::COMBO) }}">
                     <button id="plazaCategory" class="image-to-overlap categories-button button-2 w-100">Ver Categoría</button>
@@ -106,9 +106,9 @@
 
 
     <div class="container about-us-section" id="aboutUs">
-        <img class="about-us-img" src="{{ asset('admin/assets/images/HomeAboutImage.svg') }}" alt="">
+        <img class="about-us-img" src="{{ asset('admin/assets/images/HomeAboutImage.png') }}" alt="">
         <div class="about-us-text-div">
-            <p class="title main-text">Sobre Jugando Toy</p>
+            <p class="title main-text about-us-title">Sobre Jugando Toy</p>
             <p class="about-us-text">Somos una familia que desde la formación profesional del diseño y la docencia, crea y fabrica para los más pequeños, elementos inspirados en las pedagogías Pikler / Montessori con el fin de brindarles herramientas para aprender y divertirse.</p>
             <p class="about-us-text">Con un diseño funcional y con amor por el detalle, nuestros productos potencian la imaginación, el aprendizaje y todos los sentidos del niño a través del juego libre,  donde los niños aprenden a explorar de forma autónoma el entorno al tiempo que desarrollan sus capacidades sensoriales y sus habilidades corporales.</p>
             <p class="about-us-text">Nuestro compromiso es ofrecer productos de calidad que potencien la ergonomía, la estética y la perdurabilidad en el tiempo. Los acabados redondeados, los elementos metálicos ocultos, la ausencia de astillas y la utilización de materiales cuidadosamente seleccionados,  contribuyen a lograrlo.</p>
@@ -118,7 +118,7 @@
 
     <div class="container blue-bg images-overlap w-100" style="padding-left: 0; padding-right: 0;">
         <div class="cloud-container">
-            <img class="cloud" src="{{ asset('admin/assets/images/home-cloud-top.svg') }}" alt="">
+            <img class="cloud cloud-top" src="{{ asset('admin/assets/images/home-cloud-bottom.png') }}" alt="">
         </div>
         <img class="image-to-overlap opinions-fish" src="{{ asset('admin/assets/images/HomeOpinionsFish.svg') }}" alt="">
         <img class="image-to-overlap opinions-fish-bubbles" src="{{ asset('admin/assets/images/HomeOpinionsFishBubbles.svg') }}" alt="">
@@ -130,14 +130,14 @@
         </div>
         <a class="reviews-link" href="https://search.google.com/local/reviews?placeid=ChIJ5dFdDXu4vJUR1qkMLngRwIM" target="_blank">Ver todas las reseñas</a>
         <div class="cloud-container">
-            <img class="cloud cloud-bottom" src="{{ asset('admin/assets/images/home-cloud-top.svg') }}" alt="">
+            <img class="cloud cloud-bottom" src="{{ asset('admin/assets/images/home-cloud-bottom.png') }}" alt="">
         </div>
     </div>
 
-    <div class="flyer-container" style="height: 72px">
+    <div class="flyer-container">
         <div class="flyer-div">
             <div class="flyer">
-                {{-- <img src="{{ asset('admin/assets/images/HomeSlider.svg') }}" alt=""> --}}
+                <img class="w-100" src="{{ asset('admin/assets/images/HomeSlider.svg') }}" alt="">
             </div>
         </div>
     </div>
