@@ -135,7 +135,7 @@
         </div>
         <div class="carousel">
             <button class="carousel__button carousel__button--left active">
-                <img src="{{ asset('admin/assets/images/HomeShineLeft.svg') }}" alt="">
+                <img src="{{ asset('admin/assets/icons/CombosArrowLeft.svg') }}" alt="">
             </button>
             <div class="carousel__track-container">
                 <ul class="carousel__track">
@@ -153,7 +153,7 @@
                 </ul>
             </div>
             <button class="carousel__button carousel__button--right">
-                <img src="{{ asset('admin/assets/images/HomeShineRight.svg') }}" alt="">
+                <img src="{{ asset('admin/assets/icons/CombosArrowRight.svg') }}" alt="">
             </button>
             <div class="carousel__nav">
                 @foreach ($products as $key => $product)
