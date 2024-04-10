@@ -13,6 +13,7 @@ use App\Models\Admin\ShippingOption;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Repositories\Admin\SalesRepository;
+use App\Repositories\Admin\ColorsRepository;
 use App\Repositories\Admin\CombosRepository;
 use App\Repositories\Admin\ProductsRepository;
 use App\Repositories\Admin\ReceiptsRepository;
@@ -56,6 +57,11 @@ class ProductClientController extends Controller
     protected $comboImagesRepository;
 
     /**
+     * @var ColorsRepository
+     */
+    protected $colorsRepository;
+
+    /**
      * @var SalesRepository
      */
     protected $salesRepository;
@@ -82,6 +88,7 @@ class ProductClientController extends Controller
         ProductImagesRepository $productImagesRepository,
         CombosRepository $combosRepository,
         ComboImagesRepository $comboImagesRepository,
+        ColorsRepository $colorsRepository,
         SalesRepository $salesRepository,
         ReceiptsRepository $receiptsRepository,
         ParametersRepository $parametersRepository
@@ -93,6 +100,7 @@ class ProductClientController extends Controller
         $this->productImagesRepository = $productImagesRepository;
         $this->combosRepository = $combosRepository;
         $this->comboImagesRepository = $comboImagesRepository;
+        $this->colorsRepository = $colorsRepository;
         $this->salesRepository = $salesRepository;
         $this->receiptsRepository = $receiptsRepository;
         $this->parametersRepository = $parametersRepository;
@@ -139,6 +147,7 @@ class ProductClientController extends Controller
     {
         $vacations = $this->parametersRepository->first()->vacations;
         $newProduct = $this->getNewProduct();
+        $colors = $this->colorsRepository->all();
 
         if ($request->categoryId == Category::INDIVIDUAL) {
             $product = $this->productsRepository->find($request->id);
@@ -148,7 +157,8 @@ class ProductClientController extends Controller
                 'vacations' => $vacations,
                 'newProduct' => $newProduct,
                 'product' => $product,
-                'images' => $images
+                'images' => $images,
+                'colors' => $colors
             ]);
         }
         else
@@ -164,7 +174,8 @@ class ProductClientController extends Controller
                 'newProduct' => $newProduct,
                 'combo' => $combo,
                 'products' => $products,
-                'images' => $images
+                'images' => $images,
+                'colors' => $colors
             ]);
         }
     }
@@ -371,7 +382,7 @@ class ProductClientController extends Controller
             return redirect()->back()->with('error', Constants::BUY_ERROR);
         }
 
-        return redirect('/home')->with('success', $message);
+        return redirect('/')->with('success', $message);
     }
 
     public function mapDataForSale(Request $request)

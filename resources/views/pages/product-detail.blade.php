@@ -62,14 +62,24 @@
             <div class="colors-details">
                 <p class="product-name name-desktop">{{$product->name}}</p>
                 <div class="product-colors">
-                    <div class="color-type-div type-div-left @if ($product->color_id == 2)selected @else not-selected @endif">
+
+                    @foreach ($colors as $color)
+                        @if ($product->color_id == $color->id)
+                            <div class="color-type-div selected">
+                                <img @if ($color->id == 2) class="without-color" @else class="with-color" @endif src="{{ asset('admin/assets/images/product-detail/' . $color->detail_logo_img) }}" alt="">
+                                <p class="color-type-text">{{ $color->color }}</p>
+                            </div>
+                        @endif
+                    @endforeach
+
+                    {{-- <div class="color-type-div type-div-left @if ($product->color_id == 2)selected @else not-selected @endif">
                         <img class="without-color" src="{{ asset('admin/assets/images/product-detail/ProductDetailWithoutColor.svg') }}" alt="">
                         <p class="color-type-text">Sin Pintar</p>
                     </div>
                     <div class="color-type-div type-div-right @if ($product->color_id == 1)selected @else not-selected @endif">
                         <img class="with-color" src="{{ asset('admin/assets/images/product-detail/ProductDetailWithColor.svg') }}" alt="">
                         <p class="color-type-text">Arcoíris</p>
-                    </div>
+                    </div> --}}
                 </div>
                 <p class="price">AR$ {{ number_format($product->price, 2, ',', '.') }}</p>
                 <a class="anchor" href="">Ver medios de pago y promociones</a>

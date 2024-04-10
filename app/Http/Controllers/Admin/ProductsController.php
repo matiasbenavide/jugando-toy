@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Admin\Color;
 use Illuminate\Http\Request;
 use App\Models\Admin\Category;
 use App\Models\Admin\Constants;
@@ -74,11 +75,6 @@ class ProductsController extends Controller
         $this->colorsRepository = $colorsRepository;
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function showProducts(Request $request)
     {
         $task = 'products';
@@ -184,7 +180,7 @@ class ProductsController extends Controller
 
         if ($request->productId) {
             $productImages = $this->productImagesRepository->getProductImages($request->productId);
-            $comboImages = $this->productImagesRepository->getProductImages($request->productId);
+            $comboImages = $this->comboImagesRepository->getComboImages($request->productId);
         }
 
         try {
@@ -208,7 +204,7 @@ class ProductsController extends Controller
 
                     if ($files) {
                         foreach ($files as $file) {
-                            $this->productImagesRepository->create($this->mapDataForImages($file, $combo->id, true));
+                            $this->comboImagesRepository->create($this->mapDataForImages($file, $combo->id, true));
                         }
                     }
 
@@ -255,7 +251,8 @@ class ProductsController extends Controller
 
         try {
             $this->validate($request, [
-                'priceUpdate' => 'required|string',
+                'priceUpdateColor' => 'nullable|string',
+                'priceUpdateNoColor' => 'nullable|string',
             ]);
         } catch (ValidationException $e) {
             Log::error($e->getMessage(), $e->errors());
@@ -265,7 +262,13 @@ class ProductsController extends Controller
         $products = $this->combosRepository->allCombosWithProductsWithoutSearch();
 
         foreach ($products as $product) {
-            $priceToAdd = ($request->priceUpdate * $product->price)/100;
+
+            if ($product->color_id != Color::WITHOUT_COLOR) {
+                $priceToAdd = ($request->priceUpdateColor * $product->price)/100;
+            }
+            else {
+                $priceToAdd = ($request->priceUpdateNoColor * $product->price)/100;
+            }
 
             if ($product->category_id == Category::INDIVIDUAL) {
                 $product = $this->productsRepository->find($product->id);

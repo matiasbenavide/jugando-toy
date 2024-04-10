@@ -8,17 +8,6 @@
 @section('mainContent')
 <div class="home relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
     <div class="navbar-distance new-product">
-        @auth
-            @if($isAdmin)
-                <div class="fixed top-0 right-0 px-6 py-4 sm:block" style="background-color: #000">
-                    <a href="{{ url('/administracion') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Administracionz>
-                    <form class="" action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <input type="submit" class="btn" value="Cerrar Sesión">
-                    </form>
-                </div>
-            @endif
-        @endauth
         <div class="new-product-image-div">
             <img class="image-to-overlap home-rocket" src="{{ asset('admin/assets/images/HomeRocket.svg') }}" alt="">
             @isset($newProduct)

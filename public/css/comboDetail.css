@@ -9,7 +9,7 @@
 
 .carousel__image
 {
-    width: 100%;
+    width: 80%;
 }
 
 .carousel_image_container
@@ -94,6 +94,13 @@
     background: rgba(0, 0, 0, 0.75);
 }
 
+.carousel-img
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (min-width: 768px)
 {
     .carousel
@@ -107,7 +114,8 @@
 {
     .specs
     {
-        padding-bottom: 2rem;
+
+        padding: 2rem 0 !important;
     }
 
     .carousel
