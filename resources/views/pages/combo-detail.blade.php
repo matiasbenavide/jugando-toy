@@ -143,6 +143,29 @@
         <p class="specs-title">Productos incluídos</p>
         <img class="shine" src="{{ asset('admin/assets/images/HomeShineRight.svg') }}" alt="">
         </div>
+
+        {{-- SPECS FOR PRODUCT IN COMBO --}}
+        <div class="specs-description">
+            <div class="specs-container">
+                <div class="specs-icon blue-bg">
+                    <img src="{{ asset('admin/assets/icons/product-detail/ProductMaterial.svg') }}" alt="">
+                </div>
+                <p class="specs-text" id="specsMaterial"></p>
+            </div>
+            <div class="specs-container">
+                <div class="specs-icon blue-bg">
+                    <img src="{{ asset('admin/assets/icons/product-detail/ProductSize.svg') }}" alt="">
+                </div>
+                <p class="specs-text" id="specsSize"></p>
+            </div>
+            <div class="specs-container">
+                <div class="specs-icon blue-bg">
+                    <img src="{{ asset('admin/assets/icons/product-detail/ProductWeight.svg') }}" alt="">
+                </div>
+                <p class="specs-text" id="specsWeight"></p>
+            </div>
+        </div>
+
         <div class="carousel">
             <button class="carousel__button carousel__button--left active">
                 <img src="{{ asset('admin/assets/icons/CombosArrowLeft.svg') }}" alt="">
@@ -150,38 +173,16 @@
             <div class="carousel__track-container">
                 <ul class="carousel__track">
                     @foreach ($products as $product)
-                        <li class="carousel__slide @if ($product->id == reset($products)->id) current-slide @endif">
+                        <li class="carousel__slide @if ($product->id == reset($products)->id) current-slide @endif" id="{{ $product->id }}">
 
-                            {{-- SPECS FOR PRODUCT IN COMBO --}}
-                            <div class="specs-description">
-                                <div class="specs-container">
-                                    <div class="specs-icon blue-bg">
-                                        <img src="{{ asset('admin/assets/icons/product-detail/ProductMaterial.svg') }}" alt="">
-                                    </div>
-                                    <p class="specs-text">{{ $product->material }}</p>
-                                </div>
-                                <div class="specs-container">
-                                    <div class="specs-icon blue-bg">
-                                        <img src="{{ asset('admin/assets/icons/product-detail/ProductSize.svg') }}" alt="">
-                                    </div>
-                                    <p class="specs-text">{{ $product->size }}</p>
-                                </div>
-                                <div class="specs-container">
-                                    <div class="specs-icon blue-bg">
-                                        <img src="{{ asset('admin/assets/icons/product-detail/ProductWeight.svg') }}" alt="">
-                                    </div>
-                                    <p class="specs-text">{{ $product->max_weight }}kg</p>
-                                </div>
-
-                                {{-- IMAGE FOR PORDUCT IN COMBO --}}
-                                @if ($product->main_image)
-                                <div class="carousel__image carousel_image_container carousel-img">
-                                    <img class="carousel__image" src="{{ asset('images/main-images/' . $product->main_image) }}" alt="">
-                                </div>
-                                @else
-                                    <img class="carousel__image" src="{{ asset('admin/assets/images/ImageNotFound.svg') }}" alt="">
-                                @endif
+                            {{-- IMAGE FOR PORDUCT IN COMBO --}}
+                            @if ($product->main_image)
+                            <div class="carousel__image carousel_image_container carousel-img">
+                                <img class="carousel__image" src="{{ asset('images/main-images/' . $product->main_image) }}" alt="">
                             </div>
+                            @else
+                                <img class="carousel__image" src="{{ asset('admin/assets/images/ImageNotFound.svg') }}" alt="">
+                            @endif
                         </li>
                     @endforeach
                 </ul>
@@ -216,8 +217,12 @@
         let url = {!! json_encode(url('/productos')) !!};
         let baseUrl = {!! json_encode(url('/')) !!};
 
+        let products = {!! json_encode($products) !!};
+
         window.onload = function() {
-            main()
+            main({
+                products: products
+            })
             mainNavbar({
                 url: url
             })

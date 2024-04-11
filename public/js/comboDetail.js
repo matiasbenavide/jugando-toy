@@ -1,5 +1,21 @@
-export async function main()
+export async function main(options)
 {
+    let products;
+
+    let specsMaterial = $('#specsMaterial');
+    let specsSize = $('#specsSize');
+    let specsWeight = $('#specsWeight');
+
+    function initCarousel(options) {
+        products = options.products;
+
+        specsMaterial[0].innerHTML = products[0].material;
+        specsSize[0].innerHTML = products[0].size;
+        specsWeight[0].innerHTML = products[0].max_weight + 'kg';
+    }
+
+    initCarousel(options);
+
     const track = $('.carousel__track')[0];
     const slides = Array.from(track.children);
 
@@ -18,6 +34,15 @@ export async function main()
     slides.forEach(setSlidePosition);
 
     const moveToSlide = (currentSlide, targetSlide) => {
+
+        products.forEach(product => {
+            if (product.id == targetSlide.id) {
+                specsMaterial[0].innerHTML = product.material;
+                specsSize[0].innerHTML = product.size;
+                specsWeight[0].innerHTML = product.max_weight + 'kg';
+            }
+        });
+
         track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
 
         currentSlide.classList.remove('current-slide');
@@ -46,6 +71,7 @@ export async function main()
 
     nextButton.addEventListener('click', e => {
         const currentSlide = track.querySelector('.current-slide');
+
         const nextSlide = currentSlide.nextElementSibling;
 
         const currentDot = dotsNav.querySelector('.current-slide');
@@ -60,6 +86,7 @@ export async function main()
 
     prevButton.addEventListener('click', e => {
         const currentSlide = track.querySelector('.current-slide');
+
         const previousSlide = currentSlide.previousElementSibling;
 
         const currentDot = dotsNav.querySelector('.current-slide');
@@ -78,6 +105,7 @@ export async function main()
         if (!targetDot) return;
 
         const currentSlide = track.querySelector('.current-slide');
+
         const currentDot = dotsNav.querySelector('.current-slide');
         const targetIndex = dots.findIndex(dot => dot === targetDot);
         const targetSlide = slides[targetIndex];
