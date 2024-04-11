@@ -301,9 +301,14 @@ hr
 
 @media(min-width: 1025px)
 {
-    .wrapper-navbar
+    #searchSection
     {
         display: none;
+    }
+
+    .wrapper-navbar
+    {
+        margin-top: -7rem;
     }
 
     .nav
@@ -401,6 +406,13 @@ hr
     {
         font-size: 18px;
         line-height: 20px;
+    }
+
+    .desktop-shop
+    {
+        width: 30%;
+        border-radius: .5rem;
+        background-color: #154193;
     }
 }
 /*

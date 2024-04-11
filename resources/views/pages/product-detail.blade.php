@@ -7,11 +7,13 @@
 
 @section('mainContent')
     <div class="light-bg navbar-distance main-div">
-        <p class="product-type-title type-title-mobile">@if ($product->category_id == App\Models\Admin\Category::INDIVIDUAL) JUEGOS INDIVIDUALES @else PLAZAS Y COMBOS @endif > {{$product->name}}</p>
+        <p class="product-type-title type-title-mobile"> <a href="{{ url('/productos?categorySelector=' . App\Models\Admin\Category::INDIVIDUAL) }}" class="product-type-title" style="text-decoration: underline; color: #404040">JUEGOS INDIVIDUALES</a>  > {{$product->name}}</p>
         <p class="product-name name-mobile">{{$product->name}}</p>
         <div class="images-color">
             <div>
-                <p class="product-type-title type-title-desktop">@if ($product->category_id == App\Models\Admin\Category::INDIVIDUAL) JUEGOS INDIVIDUALES @else PLAZAS Y COMBOS @endif > {{$product->name}}</p>
+                <p class="product-type-title type-title-desktop"> <a href="{{ url('/productos?categorySelector=' . App\Models\Admin\Category::INDIVIDUAL) }}" class="product-type-title" style="text-decoration: underline; color: #404040">JUEGOS INDIVIDUALES</a> > {{$product->name}}</p>
+
+                {{-- PRODUCT IMAGES --}}
                 <div class="main-img-images">
                     <div class="main-img-info-div">
                         <div class="main-image-container">

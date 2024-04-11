@@ -8,11 +8,11 @@
 
 @section('mainContent')
     <div class="light-bg navbar-distance main-div">
-        <p class="product-type-title type-title-mobile">@if ($combo->category_id == App\Models\Admin\Category::INDIVIDUAL) JUEGOS INDIVIDUALES @else PLAZAS Y COMBOS @endif > {{$combo->name}}</p>
+        <p class="product-type-title type-title-mobile"> <a href="{{ url('/productos?categorySelector=' . App\Models\Admin\Category::COMBO) }}" class="product-type-title" style="text-decoration: underline; color: #404040">PLAZAS Y COMBOS</a> > {{$combo->name}}</p>
         <p class="product-name name-mobile">{{$combo->name}}</p>
         <div class="images-color">
             <div>
-                <p class="product-type-title type-title-desktop">@if ($combo->category_id == App\Models\Admin\Category::INDIVIDUAL) JUEGOS INDIVIDUALES @else PLAZAS Y COMBOS @endif > {{$combo->name}}</p>
+                <p class="product-type-title type-title-desktop"> <a href="{{ url('/productos?categorySelector=' . App\Models\Admin\Category::COMBO) }}" class="product-type-title" style="text-decoration: underline; color: #404040">PLAZAS Y COMBOS</a> > {{$combo->name}}</p>
                 <div class="main-img-images">
                     <div class="main-img-info-div">
 

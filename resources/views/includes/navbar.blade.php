@@ -2,7 +2,7 @@
     <div class="nav">
         <img id="navBarToggle" class="nav-div nav-toggle-icon" src="{{ asset('admin/assets/icons/bars.svg') }}" alt="">
         <div class="nav-div nav-links">
-            <a href="{{ url('/productos') }}" class="nav-link">Tienda</a>
+            <p class="nav-link" id="desktopNavbarShop">Tienda</p>
             <a href="{{ url('/nosotros') }}" class="nav-link">Nosotros</a>
             <a href="{{ url('/contacto') }}" class="nav-link">Contacto</a>
         </div>
@@ -24,6 +24,21 @@
             </a>
         </div>
     </div>
+
+    <div class="wrapper-navbar desktop-shop" id="desktopShop">
+        <div class="search-divs wrapper-navbar">
+            <a href="{{ url('/productos?categorySelector=' . App\Models\Admin\Category::INDIVIDUAL) }}">
+                <p class="nav-bar-link">Juegos Individuales</p>
+            </a>
+            <a href="{{ url('/productos?categorySelector=' . App\Models\Admin\Category::COMBO) }}">
+                <p class="nav-bar-link">Plazas</p>
+            </a>
+            <a href="{{ url('/productos')}}">
+                <p class="nav-bar-link">Ver Todos</p>
+            </a>
+        </div>
+    </div>
+
     <div id="searchSection" class="wrapper-navbar">
         <div class="search-section wrapper-navbar">
             <div class="search-divs">
@@ -63,11 +78,6 @@
                         <p class="recommended-products-text">{{ $newProduct->name }}</p>
                     </a>
                 @endisset
-                {{-- <div>
-                    <img src="" alt="">
-                    <p class="recommended-products-title">Más Vendido</p>
-                    <p class="recommended-products-text"></p>
-                </div> --}}
             </div>
         </div>
     </div>
