@@ -9,6 +9,7 @@ export async function mainNavbar(options) {
     let desktopSearchForm = $('#desktopSearchForm');
     let submitInput = $('#submitInput');
 
+    // let desktopShopToggle = $('#desktopShopToggle');
     let desktopNavbarShop = $('#desktopNavbarShop');
     let desktopShop = $('#desktopShop');
 
@@ -19,13 +20,25 @@ export async function mainNavbar(options) {
         });
 
         searchIcon.hover(function() {
-            desktopSearchBar[0].hidden = false;
-            desktopSearchForm[0].hidden = false;
+            desktopSearchForm[0].classList.remove('hide');
         });
 
-        desktopNavbarShop.click(function() {
-            desktopShop[0].classList.toggle('show');
-            console.log(desktopShop);
+
+        /***** TRANSITION FOR DESKTOP "SHOP" *****/
+        desktopNavbarShop.hover(function() {
+            desktopShop[0].classList.remove('hide');
+        });
+
+        desktopNavbarShop.mouseleave(function() {
+            desktopShop[0].classList.add('hide');
+        });
+
+        desktopShop.hover(function() {
+            desktopShop[0].classList.remove('hide');
+        });
+
+        desktopShop.mouseleave(function() {
+            desktopShop[0].classList.add('hide');
         });
     }
 

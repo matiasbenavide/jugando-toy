@@ -11,8 +11,8 @@
         </a>
         <div class="nav-div search-cart-container">
             <a id="searchLink" class="search-cart-container">
-                <form id="desktopSearchForm" action="{{ url('/productos') }}" method="GET" hidden>
-                    <input id="desktopSearchBar" class="nav-bar-search-input" type="text" name="productName" placeholder="Buscar juegos y plazas" hidden>
+                <form id="desktopSearchForm" action="{{ url('/productos') }}" method="GET" class="wrapper-navbar-horizontal hide">
+                    <input id="desktopSearchBar" class="nav-bar-search-input wrapper-navbar-horizontal" type="text" name="productName" placeholder="Buscar juegos y plazas">
                 </form>
                 <img class="nav-icon" id="searchIcon" style="margin-right: 5px" src="{{ asset('admin/assets/icons/searchWhite.svg') }}" alt="">
             </a>
@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <div class="wrapper-navbar desktop-shop" id="desktopShop">
+    <div class="desktop-shop wrapper-navbar hide" id="desktopShop">
         <div class="search-divs wrapper-navbar">
             <a href="{{ url('/productos?categorySelector=' . App\Models\Admin\Category::INDIVIDUAL) }}">
                 <p class="nav-bar-link">Juegos Individuales</p>

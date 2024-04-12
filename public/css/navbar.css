@@ -98,11 +98,11 @@
 {
     display: grid;
     grid-template-rows: 0fr;
-    justify-content: center;
     overflow: hidden;
     transition: grid-template-rows 500ms;
     padding: 0 0.2rem;
     margin-top: -2.7rem;
+    z-index: -10;
 }
 
 .wrapper-navbar.show
@@ -110,6 +110,11 @@
     grid-template-rows: 1fr;
     justify-content: normal;
     transition: grid-template-rows 500ms;
+}
+
+#desktopShop
+{
+    display: none;
 }
 
 .search-section
@@ -151,6 +156,7 @@ linear-gradient(0deg, #1747A0, #1747A0);
     border: 3px solid rgba(21, 65, 147, 0.24);
     border-radius: 10px;
     color: #1747A0;
+    font-size: 15px;
 }
 
 .form-consult-search:focus
@@ -236,6 +242,11 @@ hr
     width: 100%;
 }
 
+#desktopSearchForm
+{
+    display: none;
+}
+
 @media(min-width: 768px)
 {
     .nav
@@ -297,20 +308,16 @@ hr
         font-size: 18px;
         line-height: 20px;
     }
+
+    .wrapper-navbar
+    {
+        padding-left: 0.4rem;
+        padding-right: 0 0.4rem;
+    }
 }
 
 @media(min-width: 1025px)
 {
-    #searchSection
-    {
-        display: none;
-    }
-
-    .wrapper-navbar
-    {
-        margin-top: -7rem;
-    }
-
     .nav
     {
         height: 72px;
@@ -410,18 +417,77 @@ hr
 
     .desktop-shop
     {
-        width: 30%;
+        width: 35%;
+        padding: 1rem 0;
         border-radius: .5rem;
         background-color: #154193;
     }
+
+    #searchSection
+    {
+        display: none;
+    }
+
+    #desktopSearchForm
+    {
+        display: grid;
+    }
+
+    #desktopShop
+    {
+        min-height: 0;
+        display: grid;
+        margin-top: -.5rem !important;
+    }
+
+    .nav-bar-search-input
+    {
+        min-width: 0;
+    }
+
+    .wrapper-navbar
+    {
+        grid-template-rows: 1fr;
+        justify-content: normal;
+        transition: grid-template-rows 500ms;
+        margin-top: 0 !important;
+        margin-left: 2.2rem !important;
+    }
+
+    .wrapper-navbar.hide
+    {
+        display: grid;
+        grid-template-rows: 0fr;
+        overflow: hidden;
+        justify-content: center;
+        transition: grid-template-rows 500ms;
+        padding: 0 0.2rem;
+        margin-top: -7rem;
+        z-index: -10;
+    }
+
+    .wrapper-navbar-horizontal
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: normal;
+        transition: grid-template-columns 500ms;
+    }
+
+    .wrapper-navbar-horizontal.hide
+    {
+        grid-template-columns: 0fr;
+        overflow: hidden;
+        transition: grid-template-columns 500ms;
+        z-index: -10;
+    }
 }
-/*
+
 @media (min-width: 1280px)
 {
+    .desktop-shop
+    {
+        width: 30%;
+    }
 
 }
-
-@media (min-width: 1536px)
-{
-
-} */

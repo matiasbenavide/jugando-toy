@@ -63,6 +63,8 @@
             <div class="shipping-warning">
                 <p class="shipping-warning-text">El costo de envío se encuentra bajo responsabilidad del comprador.</p>
             </div>
+
+            {{-- PAYMENT WITH BILL FORM --}}
             <div class="inputs-container" id="container0">
                 <div class="number-title" id="numberTitle0">
                     <p class="form-number">1</p>
