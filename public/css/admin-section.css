@@ -476,6 +476,17 @@
     {
         margin-bottom: 3%;
     }
+
+    .table-img-container
+    {
+        width: 100px;
+        height: 100px;
+    }
+
+    .table-img
+    {
+        width: 100%;
+    }
 }
 
 @media (min-width: 1500px)

@@ -53,6 +53,9 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
         Route::post('/productos/actualizar-precios', [App\Http\Controllers\Admin\ProductsController::class, 'updatePrices']);
 
         Route::get('/ventas', [App\Http\Controllers\Admin\SalesController::class, 'showSales']);
+        Route::post('/descargar-comprobante/{receiptId}', [App\Http\Controllers\Admin\SalesController::class, 'downloadSaleReceipt']);
+
+
         Route::get('/vacaciones', [App\Http\Controllers\Admin\VacationsController::class, 'showVacations']);
         Route::post('/vacaciones', [App\Http\Controllers\Admin\VacationsController::class, 'changeVacations']);
         Route::get('/configuracion', [App\Http\Controllers\Admin\ConfigurationController::class, 'showConfiguration']);

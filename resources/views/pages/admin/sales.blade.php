@@ -10,7 +10,7 @@
         </div>
         <div class="row col-12">
             <div class="col-12 mt-4">
-                <form id="productConsult" action="POST">
+                {{-- <form id="productConsult" method="POST">
                     <div class="row col-12 align-items-center">
                         <div class="input-div col-6 col-xxl-7">
                             <input class="form-consult-search" type="text" placeholder="Buscar por nombre, documento o código">
@@ -19,7 +19,7 @@
                             </span>
                         </div>
                     </div>
-                </form>
+                </form> --}}
                 <table class="products-table">
                     <t-head>
                         <tr>
@@ -71,6 +71,15 @@
                             <label class="label" for="referenceCode">Código de referencia</label>
                             <p id="referenceCode"></p>
                         </div>
+                        <div>
+                            <label class="label" for="receiptForm">Comprobante</label>
+                            <form id="receiptForm" action="{{ url('/administracion/descargar-comprobante/') }}" method="POST" target="_blank">
+                                @csrf
+                                <input type="number" name="receiptIdInput" id="receiptId" hidden/>
+                                <input type="text" name="receiptNameInput" id="receiptName" hidden/>
+                                <button type="submit">Descargar</button>
+                            </form>
+                        </div>
                     </div>
                     <div class="shipping-data">
                         <div>
@@ -114,6 +123,7 @@
         </dialog>
     </div>
     <script type="module">
+        let baseDownloadSalesUrl = {!! json_encode(url('/administracion/descargar-comprobante/')) !!};
         let url = {!! json_encode(url('/images/main-images')) !!};
         let ship = {!! json_encode(App\Models\Admin\ShippingOption::SHIP) !!};
         let sales = {!! json_encode($allSales) !!};
@@ -123,6 +133,7 @@
         window.onload = function() {
             main({
                 url: url,
+                baseDownloadSalesUrl: baseDownloadSalesUrl,
                 sales: sales,
                 ship: ship,
             })

@@ -1,12 +1,18 @@
 export async function main(options)
 {
     let url = options.url;
+    let baseDownloadSalesUrl = options.baseDownloadSalesUrl;
     let ship = options.ship;
     let sales = options.sales;
 
     let popUp = $('#popUp');
     let name = $('#name');
     let referenceCode = $('#referenceCode');
+
+    let receiptForm = $('#receiptForm');
+    let receiptId = $('#receiptId');
+    let receiptName = $('#receiptName');
+
     let phoneNumber = $('#phoneNumber');
     let email = $('#email');
     let shippingOption = $('#shippingOption');
@@ -30,6 +36,7 @@ export async function main(options)
     }
 
     close.on('click', function() {
+        receiptForm[0].action = baseDownloadSalesUrl;
         let tbody = saleTable[0].querySelector('tbody');
         tbody.innerHTML = "";
         popUp[0].close();
@@ -39,8 +46,18 @@ export async function main(options)
     {
         name[0].innerHTML = sale.name;
         referenceCode[0].innerHTML = sale.reference_code;
+
+        if (sale.receipt_id && sale.receipt_name) {
+            receiptForm[0].action += '/' + sale.receipt_id;
+            receiptId.value = sale.receipt_id;
+            receiptName.value = sale.receipt_name;
+
+            console.log(receiptForm[0].action);
+        }
+
         phoneNumber[0].innerHTML = sale.phone_number;
         email[0].innerHTML = sale.email;
+
         if (sale.shipping_option == ship) {
             shippingOption[0].innerHTML = "Envío a domicilio";
             directionDiv[0].hidden = false;
@@ -66,6 +83,8 @@ export async function main(options)
         let products = sale.products_data;
 
         for (let i = 0; i < products.length; i++) {
+            let formattedPrice = new Intl.NumberFormat('es-AR', { style: 'decimal' }).format(products[i].price);
+
             let tr = document.createElement("tr");
             let td1 = document.createElement("td");
             let td2 = document.createElement("td");
@@ -80,7 +99,7 @@ export async function main(options)
 
             td1.innerHTML = `<div class="table-img-container"><img class="table-img" src="`+ url + `/` + products[i].main_image + `" alt=""></div>`
             td2.innerHTML = `<p class="table-title">` + products[i].name + `</p>`
-            td3.innerHTML = `<p class="table-title">` + products[i].price + `</p>`
+            td3.innerHTML = `<p class="table-title">` + '$' + formattedPrice + `</p>`
             td4.innerHTML = `<p class="table-title">` + productsInfo[i].product_quantity + `</p>`
 
             tr.appendChild(td1);
