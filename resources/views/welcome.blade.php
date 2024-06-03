@@ -124,10 +124,8 @@
     </div>
 
     <div class="flyer-container">
-        <div class="flyer-div">
-            <div class="flyer">
-                <img class="w-100" src="{{ asset('admin/assets/images/HomeSlider.svg') }}" alt="">
-            </div>
+        <div class="flyer">
+            <img src="{{ asset('admin/assets/images/HomeSlider.svg') }}" alt="">
         </div>
     </div>
 </div>
@@ -135,6 +133,7 @@
 <script type="module">
 
     import { showSuccess, showErrors } from "{{ asset(mix('js/module/sweetAlert.js')) }}";
+    import { mainHome } from "{{ asset(mix('js/home.js')) }}";
     import { mainNavbar } from "{{ asset(mix('js/admin/navBar.js')) }}";
     import { mainFooter } from "{{ asset(mix('js/admin/footer.js')) }}";
 
@@ -142,6 +141,7 @@
     let baseUrl = {!! json_encode(url('/')) !!};
 
     window.onload = function() {
+        mainHome();
         mainNavbar({
             url: url
         })

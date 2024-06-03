@@ -172,15 +172,30 @@
     padding: 1rem 5% 0;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0px);
-        left: 0;
-    }
+.flyer-container {
+    max-width: 100%;
+}
 
-    100% {
-        transform: translateX(calc(-490px * 2));
-        left: -100%;
+.flyer {
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.flyer-container[data-animated="true"] {
+    overflow: hidden;
+}
+
+.flyer-container[data-animated="true"] .flyer {
+    width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll 20s linear infinite
+}
+
+@keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
     }
 }
 

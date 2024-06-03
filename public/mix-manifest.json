@@ -12,6 +12,7 @@
     "/js/admin/sales.js": "/js/admin/sales.js",
     "/js/clientProductsList.js": "/js/clientProductsList.js",
     "/js/comboDetail.js": "/js/comboDetail.js",
+    "/js/home.js": "/js/home.js",
     "/js/payment.js": "/js/payment.js",
     "/js/shoppingCart.js": "/js/shoppingCart.js",
     "/js/shoppingDetail.js": "/js/shoppingDetail.js",
