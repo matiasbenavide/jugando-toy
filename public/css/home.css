@@ -382,7 +382,7 @@
 .cloud-bottom
 {
     margin-top: 0;
-    margin-bottom: -0.6rem;
+    margin-bottom: -1rem;
 }
 
 .opinions-container
@@ -504,6 +504,11 @@
     .home-boat {
         left: 12rem;
         bottom: 1.2rem;
+    }
+
+    .home-sun
+    {
+        right: 2rem;
     }
 
     .title
@@ -1107,6 +1112,13 @@
 
 @media (min-width: 1500px)
 {
+
+    .cloud
+    {
+        height: auto;
+        margin-top: -0.2rem;
+    }
+
     .categories-container
     {
         max-width: 1021px;
@@ -1134,6 +1146,11 @@
         width: 117px;
         height: 80px;
         bottom: 3.5rem;
+    }
+
+    .home-sun
+    {
+        right: 5rem;
     }
 
     .title
