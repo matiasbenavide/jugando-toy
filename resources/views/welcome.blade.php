@@ -126,6 +126,7 @@
     <div class="flyer-container">
         <div class="flyer">
             <img src="{{ asset('admin/assets/images/HomeSlider.svg') }}" alt="">
+            <img src="{{ asset('admin/assets/images/HomeSlider.svg') }}" alt="">
         </div>
     </div>
 </div>
