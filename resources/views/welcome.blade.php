@@ -129,6 +129,36 @@
             <img src="{{ asset('admin/assets/images/HomeSlider.svg') }}" alt="">
         </div>
     </div>
+
+    <div class="flyer-container">
+        <div class="flyer">
+
+            @php
+                $photosLinks = [
+                    '',
+                    'https://www.instagram.com/decorelieve/p/C8VZpqHvCtP/?hl=es',
+                    'https://www.instagram.com/decorelieve/p/C9i8OtHtNiC/?hl=es',
+                    'https://www.instagram.com/decorelieve/p/C8xodhZvE5e/?hl=es&img_index=1',
+                    'https://www.instagram.com/decorelieve/p/C8sdd38vWyQ/?hl=es',
+                    'https://www.instagram.com/decorelieve/p/C7SXzfVP1AD/?hl=es',
+                    'https://www.instagram.com/decorelieve/p/C33f6WwvR9A/?hl=es',
+                    'https://www.instagram.com/decorelieve/p/C7ASyhkv9bC/?hl=es',
+                    'https://www.instagram.com/decorelieve/p/C9_NTYfNdAx/?hl=es',
+                    'https://www.instagram.com/decorelieve/p/C-GzLvKMDGf/?hl=es',
+                    'https://www.instagram.com/decorelieve/p/C9f5vEJPK_k/?hl=es',
+                    'https://www.instagram.com/decorelieve/p/C6e2Tq4v-R3/?hl=es',
+                    'https://www.instagram.com/decorelieve/p/C9Qse73Mp5l/?hl=es ',
+                ];
+            @endphp
+
+            @for ($i = 1; $i < 13; $i++)
+                <a href="{{ $photosLinks[$i] }}" target="_blank"><img style="width: 300px; height: 300px;" src="{{ asset('admin/assets/ig-images/' . $i . '.jpg') }}" alt=""></a>
+            @endfor
+            @for ($i = 1; $i < 13; $i++)
+                <a href="{{ $photosLinks[$i] }}" target="_blank"><img style="width: 300px; height: 300px;" src="{{ asset('admin/assets/ig-images/' . $i . '.jpg') }}" alt=""></a>
+            @endfor
+        </div>
+    </div>
 </div>
 
 <script type="module">

@@ -460,7 +460,7 @@
 .flyer-container[data-animated="true"] .flyer {
     width: max-content;
     flex-wrap: nowrap;
-    animation: scroll 20s linear infinite
+    animation: scroll 60s linear infinite
 }
 
 @keyframes scroll {
