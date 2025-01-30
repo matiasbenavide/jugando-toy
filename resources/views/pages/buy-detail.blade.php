@@ -143,9 +143,9 @@
                 <div class="inputs-div active" id="inputsDiv2">
                     <div class="inputs">
                         <p>CBU</p>
-                        <p>000000000000000</p>
+                        <p>1910037755003700921846</p>
                         <p>ALIAS</p>
-                        <p>ALIAS.ALIAS</p>
+                        <p></p>
                     </div>
                     <div class="inputs">
                         <label class="label" for="receipt">Comprobante</label>
