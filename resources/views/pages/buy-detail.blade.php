@@ -6,7 +6,7 @@
 @section('mainContent')
     <div class="main">
         <div class="logo-details">
-            <a href="{{ url('home') }}">
+            <a href="{{ url('/') }}">
                 <img class="logo" src="{{ asset('admin/assets/icons/logo.svg') }}" alt="">
             </a>
             <div class="buy-details">
