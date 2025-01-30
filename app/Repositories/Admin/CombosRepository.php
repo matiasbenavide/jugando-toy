@@ -76,7 +76,8 @@ class CombosRepository extends BaseRepository
             }
 
             if ($searchData->withColor) {
-                $query->where('products.color_id', $searchData->withColor);
+                $query->where('products.color_id', 1)
+                ->orWhere('products.color_id', 3);
             }
 
             if ($searchData->withoutColor) {

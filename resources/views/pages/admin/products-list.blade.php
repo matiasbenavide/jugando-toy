@@ -65,11 +65,19 @@
                                                 <img class="table-colors" src="{{ asset('admin/assets/colors/blue.svg') }}" alt="">
                                             </p>
                                             <p class="table-product-info color-text mt-0 py-0">Arcoíris</p>
-                                        @else
+                                        @elseif ($combo->color_id == 2)
                                             <p class="table-product-info mb-2 py-0">
                                                 <img class="table-colors" src="{{ asset('admin/assets/colors/no_color.svg') }}" alt="">
                                             </p>
                                             <p class="table-product-info color-text mt-0 py-0">Sin pintar</p>
+                                        @elseif ($combo->color_id == 3)
+                                        <p class="table-product-info mb-2 py-0">
+                                            <img class="table-colors" src="{{ asset('admin/assets/colors/light_purple.svg') }}" alt="">
+                                            <img class="table-colors" src="{{ asset('admin/assets/colors/light_yellow.svg') }}" alt="">
+                                            <img class="table-colors" src="{{ asset('admin/assets/colors/light_green.svg') }}" alt="">
+                                            <img class="table-colors" src="{{ asset('admin/assets/colors/light_blue.svg') }}" alt="">
+                                        </p>
+                                        <p class="table-product-info color-text mt-0 py-0">Pastel</p>
                                         @endif
                                     </p>
                                 </td class="table-content">

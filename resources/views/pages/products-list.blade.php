@@ -24,10 +24,6 @@
         <p class="list-title" id="mobileTitle">{{ $title }}</p>
         <div class="filter-products">
             <div class="filter-buttons-container">
-                {{-- <button class="filter-button button-2" id="orderByToggle">
-                    <img src="{{ asset('admin/assets/icons/order.svg') }}" alt="">
-                    Ordenar por
-                </button> --}}
                 <button class="filter-button button-2" id="filterToggle">
                     <img src="{{ asset('admin/assets/icons/filter.svg') }}" alt="">
                     Filtrar
@@ -75,7 +71,7 @@
                     @foreach ($combosAndProducts as $product)
                         <a href="{{ url('/productos/detalle/' . $product->category_id . '/' . $product->id) }}" class="noted-products" style="margin-bottom: 15px">
                             <div class="images-overlap product">
-                                @if ($product->color_id == App\Models\Admin\Category::INDIVIDUAL)
+                                @if ($product->color_id == 1 || $product->color_id == 3)
                                     <p class="image-to-overlap noted with-color">Pintada</p>
                                 @else
                                     <p class="image-to-overlap noted without-color">Sin Pintar</p>

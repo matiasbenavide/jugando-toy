@@ -60,7 +60,7 @@
             @foreach ($notedProducts as $noted)
                 <a href="{{ url('/productos/detalle/' . $noted->category_id . '/' . $noted->id) }}" class="noted-products" style="margin-bottom: 15px">
                     <div class="images-overlap product">
-                        @if ($noted->color_id == 1)
+                        @if ($noted->color_id == 1 || $noted->color_id == 3)
                             <p class="image-to-overlap noted with-color">Pintada</p>
                         @else
                             <p class="image-to-overlap noted without-color">Sin Pintar</p>
@@ -101,7 +101,6 @@
             <p class="about-us-text">Somos una familia que desde la formación profesional del diseño y la docencia, crea y fabrica para los más pequeños, elementos inspirados en las pedagogías Pikler / Montessori con el fin de brindarles herramientas para aprender y divertirse.</p>
             <p class="about-us-text">Con un diseño funcional y con amor por el detalle, nuestros productos potencian la imaginación, el aprendizaje y todos los sentidos del niño a través del juego libre,  donde los niños aprenden a explorar de forma autónoma el entorno al tiempo que desarrollan sus capacidades sensoriales y sus habilidades corporales.</p>
             <p class="about-us-text">Nuestro compromiso es ofrecer productos de calidad que potencien la ergonomía, la estética y la perdurabilidad en el tiempo. Los acabados redondeados, los elementos metálicos ocultos, la ausencia de astillas y la utilización de materiales cuidadosamente seleccionados,  contribuyen a lograrlo.</p>
-            {{-- <button id="knowMore" class="button-2 about-us-button">Saber más</button> --}}
         </div>
     </div>
 

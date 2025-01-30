@@ -73,15 +73,6 @@
                             </div>
                         @endif
                     @endforeach
-
-                    {{-- <div class="color-type-div type-div-left @if ($combo->color_id == 2)selected @else not-selected @endif">
-                        <img class="without-color" src="{{ asset('admin/assets/images/product-detail/ProductDetailWithoutColor.svg') }}" alt="">
-                        <p class="color-type-text">Sin Pintar</p>
-                    </div>
-                    <div class="color-type-div type-div-right @if ($combo->color_id == 1)selected @else not-selected @endif">
-                        <img class="with-color" src="{{ asset('admin/assets/images/product-detail/ProductDetailWithColor.svg') }}" alt="">
-                        <p class="color-type-text">Arcoíris</p>
-                    </div> --}}
                 </div>
                 <p class="price">AR$ {{ number_format($combo->price, 2, ',', '.') }}</p>
                 <a class="anchor" href="">Ver medios de pago y promociones</a>
