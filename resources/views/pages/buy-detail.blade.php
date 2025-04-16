@@ -145,7 +145,7 @@
                         <p>CBU</p>
                         <p>1910037755003700921846</p>
                         <p>ALIAS</p>
-                        <p></p>
+                        <p>jugandotoy.juegos</p>
                     </div>
                     <div class="inputs">
                         <label class="label" for="receipt">Comprobante</label>
